@@ -138,9 +138,16 @@ When the agent is started, you can view it on the GoCD Agents page.  At this poi
 
 ![devops-gocd-server-web-app-agents](images/devops-gocd-server-web-app-agents.png)
 
+
+
 #### Application Instances
+For the uppercase-service pipeline uppercaseAcceptanceTest and uppercaseServiceStage stages, the uppercase-service component gets deployed to the **devops-uppercase-service-test** and **devops-uppercase-service-staging** EC2 instances respectively.
 
+Similarly, uppercase-web gets deployed to **devops-uppercase-web-test** and **devops-uppercase-web-staging** as part og the uppercase-web pipeline.
 
+These hosts are minimal t2.micro EC2 instance types with nothing installed except for Docker.  New instances can be created using the docker AMI.
+
+![devops-ec2-uppercase-instances](images/devops-ec2-uppercase-instances.png)
 
 ### Artifact Repository
 All of the application components are packaged as Docker images.  When a new version of a Docker image is created as part of a CDP build, it is uploaded to DockerHub so that it may be used by subsequent CDP activities.
