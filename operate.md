@@ -134,12 +134,21 @@ Once the agent is configured you can start the GoCD agent. SSH to the host and e
 sudo /etc/init.d/go-agent start
 ~~~
 
-When the agent is started, you can view it on the GoCD Agents page.  At this point, the agent may be configured to run specific pipeline jobs.
+When the agent is started, you can view it on the GoCD Agents page.  At this point, the agent may be configured to run specific pipeline jobs.  Note that GoCD server recognizes the agent by its subnet address.
 
 ![devops-gocd-server-web-app-agents](images/devops-gocd-server-web-app-agents.png)
 
+#### Application Instances
 
 
+
+### Artifact Repository
+All of the application components are packaged as Docker images.  When a new version of a Docker image is created as part of a CDP build, it is uploaded to DockerHub so that it may be used by subsequent CDP activities.
+
+#### DockerHub
+The Blue Agility DockerHub account may be accessed at: [https://hub.docker.com/login/](https://hub.docker.com/login/).  The credentials may be found [here](https://intranet.blue-agility.com/bluejazz/wiki/bluecdp/).
+
+![devops-docker-hub](images/devops-docker-hub.png)
 
 
 
