@@ -79,6 +79,7 @@ The Go Server and a single Go Agent are running on the **devops-gocd-server** an
 The GoCD server runs in a Docker container on an EC2 instance.  GoCD server provides access to the web app on non-secure and secure ports 8143 and 8154 respectively so these inbound ports must be made accessible via the instance's security group configuration:
 
 ![devops-ec2-gocd-server-sg](images/devops-ec2-gocd-server-sg.png)
+
 To start the GoCD server, SSH to the instance
 
 ![devops-ec2-ssh-gocd-server](images/devops-ec2-ssh-gocd-server.png)
@@ -119,7 +120,7 @@ Note that you will SSH to the agent instance using the its public DNS address an
 
 ![devops-ec2-ssh-gocd-agent](images/devops-ec2-ssh-gocd-agent.png)
 
-When GoCD agents are started, they connect to a specified GoCD server.  This is ocnfigured in the /etc/default/go-agent file on the agent instance like so:
+When GoCD agents are started, they connect to a specified GoCD server.  This is configured in the /etc/default/go-agent file on the agent instance like so:
 
 ~~~bash
 GO_SERVER_URL=https://ec2-54-208-115-115.compute-1.amazonaws.com:8154/go
@@ -137,7 +138,6 @@ sudo /etc/init.d/go-agent start
 When the agent is started, you can view it on the GoCD Agents page.  At this point, the agent may be configured to run specific pipeline jobs.  Note that GoCD server recognizes the agent by its subnet address.
 
 ![devops-gocd-server-web-app-agents](images/devops-gocd-server-web-app-agents.png)
-
 
 
 #### Application Instances
