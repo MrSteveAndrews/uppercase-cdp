@@ -6,8 +6,8 @@ BlueCDP is demonstrated by means of building and testing a simple microservice a
 
 The Uppercase application consist of two runtime components:
 
-* **uppercase-service**	 : A microservice that converts an input string of characters to upper case using the REST protocol
-* **uppercase-web** : A web application that provides a simple user interface for interacting with uppercase-service
+* `uppercase-service`	 : A microservice that converts an input string of characters to upper case using the REST protocol
+* `uppercase-web` : A web application that provides a simple user interface for interacting with uppercase-service
 
 The code for these components is managed in GitHub in the following repositories:
 
@@ -46,7 +46,7 @@ All of the BlueCDP components are deployed to [AWS EC2](https://aws.amazon.com/e
 ### Security
 The Blue Agility AWS account may be accessed at [https://blueagility.signin.aws.amazon.com/console](https://blueagility.signin.aws.amazon.com/console).  The login credentials may be found [here](https://intranet.blue-agility.com/bluejazz/wiki/bluecdp/).
 
-All of the BlueCDP computing resources are secured with the **devops** key pair: 
+All of the BlueCDP computing resources are secured with the `devops` key pair: 
 
 ![devops-key-pair](images/devops-key-pair.png)
 
@@ -61,7 +61,7 @@ All BlueCDP computing resources are accessible over the public Internet via the 
 
 ### EC2
 
-BlueCDP EC2 instances may be managed and monitored from the EC2 console.  Note that you can filter the list to only show those instances with key pair = **devops**
+BlueCDP EC2 instances may be managed and monitored from the EC2 console.  Note that you can filter the list to only show those instances with `key pair = devops`
 
 ![devops-ec2-console](images/devops-ec2-console.png)
 
@@ -70,7 +70,7 @@ BlueCDP uses [ThoughtWorks Go CD](https://www.go.cd/) to orchestrate the steps i
 
 GoCD leverages a distributed architecture wherein a central *server* orchestrates the activities of *agents* that perform the work in the various pipeline jobs.
 
-The Go Server and a single Go Agent are running on the **devops-gocd-server** and **devops-gocd-agent** EC2 instances respectively.
+The Go Server and a single Go Agent are running on the `devops-gocd-server` and `devops-gocd-agent` EC2 instances respectively.
 
 ![devops-ec2-gocd](images/devops-ec2-gocd.png)
 
@@ -116,7 +116,7 @@ To create new GoCD agents with this instance configuration, you can use the **go
 
 ![devops-ec2-ami-gocd-agent](images/devops-ec2-ami-gocd-agent.png)
 
-Note that you will SSH to the agent instance using the its public DNS address and the aforementioned **devops** private key
+Note that you will SSH to the agent instance using the its public DNS address and the aforementioned `devops` private key
 
 ![devops-ec2-ssh-gocd-agent](images/devops-ec2-ssh-gocd-agent.png)
 
@@ -141,9 +141,9 @@ When the agent is started, you can view it on the GoCD Agents page.  At this poi
 
 
 #### Application Instances
-For the uppercase-service pipeline uppercaseAcceptanceTest and uppercaseServiceStage stages, the uppercase-service component gets deployed to the **devops-uppercase-service-test** and **devops-uppercase-service-staging** EC2 instances respectively.
+For the uppercase-service pipeline uppercaseAcceptanceTest and uppercaseServiceStage stages, the uppercase-service component gets deployed to the `devops-uppercase-service-test` and `devops-uppercase-service-staging` EC2 instances respectively.
 
-Similarly, uppercase-web gets deployed to **devops-uppercase-web-test** and **devops-uppercase-web-staging** as part og the uppercase-web pipeline.
+Similarly, uppercase-web gets deployed to `devops-uppercase-web-test` and `devops-uppercase-web-staging` as part og the uppercase-web pipeline.
 
 These hosts are minimal t2.micro EC2 instance types with nothing installed except for Docker.  New instances can be created using the docker AMI.
 
